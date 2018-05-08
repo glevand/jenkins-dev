@@ -114,6 +114,7 @@ if [[ "${KOLA_DEBUG}" == "true" ]]; then
 fi
 
 ./run-mantle-${arch} --verbose --kvm -- \
+    timeout --signal=SIGQUIT 120m \
     kola run \
     ${KOLA_TESTS} \
     ${kola_extra} \
